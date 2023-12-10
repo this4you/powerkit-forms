@@ -1,9 +1,8 @@
 import React from 'react';
-import { Box, Link, Paper } from '@mui/material';
+import { Box, Paper, Typography, useTheme } from '@mui/material';
 import CheckIcon from '@mui/icons-material/Check';
 import ErrorIcon from '@mui/icons-material/Error';
 import InfoIcon from '@mui/icons-material/Info';
-import InstagramIcon from '@mui/icons-material/Instagram';
 
 type ResultMessageProps = {
     message: string,
@@ -11,22 +10,23 @@ type ResultMessageProps = {
 }
 export const ResultMessage: React.FC<ResultMessageProps> = ({ message, code }) => {
     const formResultConfig = getResultConfig(code);
+    const theme = useTheme();
 
     return (
         <>
             <Paper elevation={3} sx={{
-                borderRadius: '36px',
-                width: '90%',
+                borderRadius: '20px',
+                width: '95vw',
                 maxWidth: '600px',
-                minHeight: '400px',
+                minHeight: '300px',
                 display: 'flex',
                 alignItems: 'center',
                 flexDirection: 'column'
             }}>
                 <Box sx={{
                     color: 'white',
-                    borderTopRightRadius: '36px',
-                    borderTopLeftRadius: '36px',
+                    borderTopRightRadius: '20px',
+                    borderTopLeftRadius: '20px',
                     width: '100%',
                     height: '150px',
                     backgroundColor: formResultConfig.color,
@@ -37,11 +37,14 @@ export const ResultMessage: React.FC<ResultMessageProps> = ({ message, code }) =
                     <Box sx={{
                         display: 'flex',
                         alignItems: 'center',
-                        justifyContent: 'space-between',
-                        width: '310px'
+                        justifyContent: 'space-around',
+                        width: '320px'
                     }}>
                         {formResultConfig.icon}
-                        <h3>{formResultConfig.title}</h3>
+
+                        <Typography variant="h5">
+                            {formResultConfig.title}
+                        </Typography>
                     </Box>
                 </Box>
                 <Box sx={{
@@ -49,20 +52,11 @@ export const ResultMessage: React.FC<ResultMessageProps> = ({ message, code }) =
                     alignItems: 'center',
                     minHeight: '150px',
                     boxSizing: 'border-box',
-                    padding: '25px'
+                    padding: theme.spacing(3)
                 }}>
-                    {message}
-                </Box>
-                <Box sx={{
-                    display: 'flex',
-                    height: '100px',
-                    width: '100%',
-                    alignItems: 'center',
-                    justifyContent: 'center'
-                }}>
-                    <Link href="https://www.instagram.com/uapowerkit" sx={{ color: 'black' }}>
-                        <InstagramIcon sx={{ fontSize: '75px', marginBottom: '15px' }}/>
-                    </Link>
+                    <Typography variant="body1">
+                        {message}
+                    </Typography>
                 </Box>
             </Paper>
         </>

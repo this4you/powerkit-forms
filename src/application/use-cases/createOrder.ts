@@ -30,7 +30,7 @@ const mapFormValues = async (createOrderFormValues: CreateOrderFormValues): Prom
     postOffice: createOrderFormValues.postOffice.id
 });
 
-export const createOrder = (setOrderResponse: (formResult: FormResult) => void, setLoading: (isLoading: boolean) => void) =>
+export const createOrder = (setFormResult: (formResult: FormResult) => void, setLoading: (isLoading: boolean) => void) =>
     async (createOrderFormValues: CreateOrderFormValues) => {
         setLoading(true);
         try {
@@ -38,12 +38,12 @@ export const createOrder = (setOrderResponse: (formResult: FormResult) => void, 
 
             const response = await createOrderHttp(createOrder);
 
-            setOrderResponse({
+            setFormResult({
                 code: response.StatusCode,
                 message: response.Message
             });
         } catch (e) {
-            setOrderResponse({
+            setFormResult({
                 code: "-1",
                 message: "Виникла помилка в процесі створення замовлення. Будь ласка, напишіть нам в instagram"
             });

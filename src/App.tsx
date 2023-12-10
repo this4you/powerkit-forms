@@ -1,21 +1,29 @@
 import React from 'react';
-import { MainForm } from './components/main-form/MainForm.tsx';
-import { Box, CssBaseline } from '@mui/material';
-import { GeneralForm } from './components/general-form/GeneralForm.tsx';
+import { Box, createTheme, CssBaseline, responsiveFontSizes, ThemeProvider } from '@mui/material';
+import { OrderForm } from './forms/order-form/OrderForm.tsx';
+import { FormWrapper } from './forms/form-wrapper/FormWrapper.tsx';
+
+const theme = responsiveFontSizes(createTheme());
 
 function App() {
     return (
-        <Box sx={{
-            height: '100vh',
-            width: '100vw',
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            backgroundColor: 'black'
-        }}>
-            <CssBaseline/>
-            <GeneralForm/>
-        </Box>
+        <ThemeProvider theme={theme}>
+            <Box sx={{
+                minHeight: '100vh',
+                width: '100vw',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                backgroundColor: 'black',
+            }}>
+                <CssBaseline/>
+                <FormWrapper>
+                    <OrderForm/>
+                </FormWrapper>
+                {/*<DonateForm/>*/}
+                {/*<MainForm/>*/}
+            </Box>
+        </ThemeProvider>
     )
 }
 
