@@ -2,6 +2,7 @@ import React from 'react';
 import { Box, createTheme, CssBaseline, responsiveFontSizes, ThemeProvider } from '@mui/material';
 import { OrderForm } from './forms/order-form/OrderForm.tsx';
 import { FormWrapper } from './forms/form-wrapper/FormWrapper.tsx';
+import { ProductType } from './application/models/ProductType.ts';
 
 const theme = responsiveFontSizes(createTheme());
 
@@ -18,7 +19,7 @@ function App() {
             }}>
                 <CssBaseline/>
                 <FormWrapper>
-                    <OrderForm/>
+                    <OrderForm productType={ProductType.POWERBANK}/>
                 </FormWrapper>
                 {/*<DonateForm/>*/}
                 {/*<MainForm/>*/}

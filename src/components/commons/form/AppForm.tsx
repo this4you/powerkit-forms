@@ -11,8 +11,9 @@ const isEmptyObject = (obj: object): boolean => Object.entries(obj).every(([_, v
     return !value
 })
 
-export const AppForm = <T extends FieldValues>({ children, submit, formValidator }: FormWrapperProps<T>) => {
+export const AppForm = <T extends FieldValues>({ children, submit, formValidator, defaultValues = {} }: FormWrapperProps<T>) => {
     const form = useForm<T>({
+        values: defaultValues as T,
         mode: 'onChange',
         resolver: async (data) => {
             if (!formValidator) {

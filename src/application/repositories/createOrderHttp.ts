@@ -23,7 +23,8 @@ export const createOrderHttp = async (createOrder: CreateOrder): Promise<CreateO
             File: {
                 ApproveDocument: createOrder.file.approveDocument,
                 Name: createOrder.file.name
-            }
+            },
+            ProductCode: createOrder.productCode
         }
     );
 

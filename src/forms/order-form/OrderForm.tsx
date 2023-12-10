@@ -8,14 +8,16 @@ import { RegionSearchField } from '../../components/region-search-field/RegionSe
 import { PostOfficeSearchField } from '../../components/post-office-search-field/PostOfficeSearchField.tsx';
 import { FileUploader } from '../../components/file-uploader/FileUploader.tsx';
 import { OrderFormValidator } from '../../application/validators/LoginFormValidator.ts';
+import { ProductType } from '../../application/models/ProductType.ts';
 
 type OrderFormProps = {
+    productType: ProductType,
     setFormResult?: (formResult: FormResult) => void;
 }
 
 const phoneMaskConfig = { mask: '+38 999 999 99 99', maskChar: '*' };
 
-export const OrderForm: React.FC<OrderFormProps> = ({ setFormResult }) => {
+export const OrderForm: React.FC<OrderFormProps> = ({ setFormResult, productType }) => {
     const theme = useTheme();
     const [loading, setLoading] = useState(false);
     const createOrderHandler = useMemo(() => createOrder(setFormResult, setLoading), [setFormResult]);
@@ -23,6 +25,7 @@ export const OrderForm: React.FC<OrderFormProps> = ({ setFormResult }) => {
         width: '80%',
         marginTop: theme.spacing(2)
     };
+    const { title } = getProductTypeConfig(productType);
 
     return (
         <FormContainer isLoading={loading}>
@@ -30,19 +33,25 @@ export const OrderForm: React.FC<OrderFormProps> = ({ setFormResult }) => {
                 textAlign: 'center',
                 margin: theme.spacing(4),
             }}>
-                Форма замовлення повербанку
+                {title}
             </Typography>
 
             <Alert severity="info">
                 Можна замовити один пристрій для одного військового
             </Alert>
 
-            <Alert sx={{marginTop: theme.spacing(1)}} severity="info">
+            <Alert sx={{ marginTop: theme.spacing(1) }} severity="info">
                 Терміни залежать від кількості замовлень повербанків і від вашої черги.
                 Терміни можуть розтягуватись до 2-3 місяців, в залежності від кількості волонтерів і наповненості банки
             </Alert>
 
-            <AppForm submit={createOrderHandler} formValidator={new OrderFormValidator()}>
+            <AppForm
+                submit={createOrderHandler}
+                formValidator={new OrderFormValidator()}
+                defaultValues={{
+                  productCode: productType
+                }}
+            >
                 <FormTextField
                     required sx={inputStyle}
                     id="name"
@@ -112,4 +121,17 @@ export const OrderForm: React.FC<OrderFormProps> = ({ setFormResult }) => {
 
         </FormContainer>
     );
+}
+
+function getProductTypeConfig(productType: ProductType): { title: string } {
+    switch (productType) {
+        case ProductType.POWERBANK:
+            return {
+                title: 'Форма замовлення повербанку'
+            }
+        case ProductType.FLASHLIGH:
+            return {
+                title: 'Форма замовлення ліхтарика'
+            }
+    }
 }
