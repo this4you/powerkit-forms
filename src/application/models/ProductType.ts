@@ -1,4 +1,4 @@
 export enum ProductType {
     POWERBANK = 'POWERBANK',
-    FLASHLIGH = 'FLASHLIGH'
+    FLASHLIGHT = 'FLASHLIGHT'
 }

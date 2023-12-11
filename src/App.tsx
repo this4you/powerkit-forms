@@ -6,7 +6,10 @@ import { ProductType } from './application/models/ProductType.ts';
 
 const theme = responsiveFontSizes(createTheme());
 
-function App() {
+type AppConfig = {
+    productType: ProductType
+}
+function App({productType}:AppConfig) {
     return (
         <ThemeProvider theme={theme}>
             <Box sx={{
@@ -18,11 +21,10 @@ function App() {
                 backgroundColor: 'black',
             }}>
                 <CssBaseline/>
-                <FormWrapper>
-                    <OrderForm productType={ProductType.POWERBANK}/>
+                <FormWrapper productType={productType}>
+                    <OrderForm productType={productType}/>
                 </FormWrapper>
                 {/*<DonateForm/>*/}
-                {/*<MainForm/>*/}
             </Box>
         </ThemeProvider>
     )

@@ -3,15 +3,20 @@ import { FormResult } from '../../application/models/FormResult.ts';
 import { getIsAvailable } from '../../application/use-cases/getIsAvailable.ts';
 import { ResultMessage } from '../../components/result-message/ResultMessage.tsx';
 import { Typography } from '@mui/material';
+import { ProductType } from '../../application/models/ProductType.ts';
 
 
-export const FormWrapper: React.FC<PropsWithChildren> = ({ children }) => {
+type FormWrapperProps = {
+    productType: ProductType
+} & PropsWithChildren;
+
+export const FormWrapper: React.FC<FormWrapperProps> = ({ children, productType }) => {
     const [formResult, setFormResult] = useState<FormResult | null>(null);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         const getIsAvailableAsync = async () => {
-            const isFormAvailable = await getIsAvailable();
+            const isFormAvailable = await getIsAvailable(productType);
 
             if (!isFormAvailable.isAvailable) {
                 setFormResult({

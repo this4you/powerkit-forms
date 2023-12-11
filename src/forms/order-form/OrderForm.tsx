@@ -129,7 +129,7 @@ function getProductTypeConfig(productType: ProductType): { title: string } {
             return {
                 title: 'Форма замовлення повербанку'
             }
-        case ProductType.FLASHLIGH:
+        case ProductType.FLASHLIGHT:
             return {
                 title: 'Форма замовлення ліхтарика'
             }
