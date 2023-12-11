@@ -41,7 +41,7 @@ export const OrderForm: React.FC<OrderFormProps> = ({ setFormResult, productType
             </Alert>
 
             <Alert sx={{ marginTop: theme.spacing(1) }} severity="info">
-                Терміни залежать від кількості замовлень повербанків і від вашої черги.
+                Терміни залежать від кількості замовлень і від вашої черги.
                 Терміни можуть розтягуватись до 2-3 місяців, в залежності від кількості волонтерів і наповненості банки
             </Alert>
 
