@@ -2,7 +2,7 @@ import { Alert, Button, Typography, useTheme } from '@mui/material';
 import React, { useMemo, useState } from 'react';
 import { FormContainer } from '../../components/form-container/FormContainer.tsx';
 import { FormSection } from '../../components/form-section/FormSection.tsx';
-import { ProductSelector } from '../../components/device-selector/ProductSelector.tsx';
+import { ProductSelector } from '../../components/product-selector/ProductSelector.tsx';
 import { FormResult } from '../../application/models/FormResult.ts';
 import { AppForm, FormTextField } from '../../components/commons/form';
 import { FileUploader } from '../../components/file-uploader/FileUploader.tsx';

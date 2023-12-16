@@ -1,8 +1,6 @@
-import { Box, FormControlLabel, Radio, RadioGroup, Typography, useTheme } from '@mui/material';
+import { Box, Typography, useTheme } from '@mui/material';
 import React from 'react';
 
-import PowerIcon from '../../svg/power.svg';
-import LightIcon from '../../svg/light.svg';
 import { Controller, useFormContext } from 'react-hook-form';
 import { ProductType } from '../../application/models/ProductType.ts';
 
@@ -26,7 +24,7 @@ export const ProductSelector = () => {
                     marginTop: theme.spacing(3),
                 }}>
                     <DeviceSelectorItem
-                        icon={PowerIcon}
+                        icon={'/power.svg'}
                         label="Повербанк"
                         isSelected={field.value == ProductType.POWERBANK}
                         onClick={() => {
@@ -34,7 +32,7 @@ export const ProductSelector = () => {
                         }}
                     />
                     <DeviceSelectorItem
-                        icon={LightIcon}
+                        icon={'/light.svg'}
                         label="Ліхтарик"
                         isSelected={field.value == ProductType.FLASHLIGHT}
                         onClick={() => {
@@ -51,7 +49,7 @@ type DeviceSelectorItemProps = {
     label: string;
     isSelected?: boolean;
     onClick: React.MouseEventHandler<HTMLDivElement>;
-    icon: any;
+    icon: string;
 };
 export const DeviceSelectorItem: React.FC<DeviceSelectorItemProps> = ({ label, icon, onClick, isSelected = false }) => {
     return (
