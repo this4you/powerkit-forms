@@ -7,7 +7,7 @@ import { ProductType } from '../../application/models/ProductType.ts';
 
 
 type FormWrapperProps = {
-    productType: ProductType
+    productType?: ProductType
 } & PropsWithChildren;
 
 export const FormWrapper: React.FC<FormWrapperProps> = ({ children, productType }) => {
@@ -29,9 +29,15 @@ export const FormWrapper: React.FC<FormWrapperProps> = ({ children, productType 
             }, 1000);
         }
 
-        getIsAvailableAsync()
+        if (productType) {
+            getIsAvailableAsync()
+        } else {
+            setTimeout(() => {
+                setLoading(false);
+            }, 1000);
+        }
 
-    }, [setLoading, setFormResult]);
+    }, [productType, setLoading, setFormResult]);
 
     if (loading) {
         return (

@@ -2,12 +2,13 @@ import React, { useEffect, useMemo, useState } from 'react';
 import { AutocompleteTextField } from '../commons/form/autocomplete-field/AutocompleteTextField.tsx';
 import { getRegions } from '../../application/use-cases/getRegions.ts';
 import { debounce } from 'lodash';
-import { inputStyle } from '../commons/styles.ts';
+import { useTheme } from '@mui/material';
 
 export const RegionSearchField: React.FC = () => {
     const [loading, setLoading] = useState(false);
     const [searchValue, setSearchValue] = useState('');
     const [options, setOptions] = useState([]);
+    const theme = useTheme();
 
     const initOptions = useMemo(() => debounce((value: string) => {
         return getRegions(value).then((data) => {
@@ -28,6 +29,11 @@ export const RegionSearchField: React.FC = () => {
     const onSearchFiledChange = (event: any) => {
         setSearchValue(event.target.value)
     }
+
+    const inputStyle = {
+        width: '80%',
+        marginTop: theme.spacing(1)
+    };
 
     return (
         <AutocompleteTextField

@@ -6,10 +6,10 @@ import { useFormContext, useWatch } from 'react-hook-form';
 import { CreateOrderFormValues } from '../../application/models/CreateOrderFormValues.ts';
 import { Region } from '../../application/models/Region.ts';
 import { PostOffice } from '../../application/models/PostOffice.ts';
-import { autocompleteClasses, Box } from '@mui/material';
-import { inputStyle } from '../commons/styles.ts';
+import { autocompleteClasses, Box, useTheme } from '@mui/material';
 
 export const PostOfficeSearchField: React.FC = () => {
+    const theme = useTheme();
     const [loading, setLoading] = useState(false);
     const [selectedOffice, setSelectedOffice] = useState<PostOffice | null>(null);
     const [searchValue, setSearchValue] = useState('');
@@ -65,6 +65,11 @@ export const PostOfficeSearchField: React.FC = () => {
     useEffect(() => {
         initOptionsFromSearch(searchValue, postOffices);
     }, [searchValue, postOffices])
+
+    const inputStyle = {
+        width: '80%',
+        marginTop: theme.spacing(1)
+    };
 
     return (
         <AutocompleteTextField

@@ -18,4 +18,10 @@ export class ValidatorFieldUtils {
             return `Максимальна довжина поля ${max}`
         }
     }
+
+    static maxAmount(value: number, max: number) {
+        if (value > max) {
+            return `Максимальна кількість ${max}`
+        }
+    }
 }

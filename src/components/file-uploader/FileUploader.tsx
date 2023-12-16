@@ -4,10 +4,10 @@ import React from 'react';
 import { useFormContext } from 'react-hook-form';
 import CheckIcon from '@mui/icons-material/Check';
 
-const fileInfoText = 'Нам необхідне підтвердження вашого статусу військовослужбовця або громадської організації.\n' +
-    'Це має бути фотографія, яка підтвердить ваш статус. Фотографія може бути вашого посвідчення та/або особисте фото в формі з військовою атрибутикою або документи підтверджуючі діяльність неприбуткової благодійної орнанізації.';
-
-export const FileUploader: React.FC = () => {
+type FileUploaderProps = {
+    fileInfoText: string;
+}
+export const FileUploader: React.FC<FileUploaderProps> = ({fileInfoText}) => {
     const theme = useTheme();
     const name = 'approveDocument'
     const { register, watch, formState: { errors } } = useFormContext();

@@ -7,13 +7,16 @@ import { AppForm, FormTextField } from '../../components/commons/form';
 import { RegionSearchField } from '../../components/region-search-field/RegionSearchField.tsx';
 import { PostOfficeSearchField } from '../../components/post-office-search-field/PostOfficeSearchField.tsx';
 import { FileUploader } from '../../components/file-uploader/FileUploader.tsx';
-import { OrderFormValidator } from '../../application/validators/LoginFormValidator.ts';
+import { OrderFormValidator } from '../../application/validators/OrderFormValidator.ts';
 import { ProductType } from '../../application/models/ProductType.ts';
 
 type OrderFormProps = {
     productType: ProductType,
     setFormResult?: (formResult: FormResult) => void;
 }
+
+const fileInfoText = 'Нам необхідне підтвердження вашого статусу військовослужбовця або громадської організації.\n' +
+    'Це має бути фотографія, яка підтвердить ваш статус. Фотографія може бути вашого посвідчення та/або особисте фото в формі з військовою атрибутикою або документи підтверджуючі діяльність неприбуткової благодійної орнанізації.';
 
 const phoneMaskConfig = { mask: '+38 999 999 99 99', maskChar: '*' };
 
@@ -107,7 +110,7 @@ export const OrderForm: React.FC<OrderFormProps> = ({ setFormResult, productType
                     label="Додаткова інформація"
                     variant="standard"
                 />
-                <FileUploader/>
+                <FileUploader fileInfoText={fileInfoText}/>
                 <Button type="submit"
                         sx={{
                             marginTop: '15px',
