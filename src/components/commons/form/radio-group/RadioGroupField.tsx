@@ -27,6 +27,7 @@ export const RadioGroupField: React.FC<RadioGroupFieldProps> = ({ name, label, i
                     <RadioGroup {...rest} {...field} row>
                         {items.map(it => (
                             <FormControlLabel
+                                key={it.label}
                                 value={it.value}
                                 control={<Radio/>}
                                 label={it.label}

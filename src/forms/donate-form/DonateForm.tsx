@@ -2,7 +2,7 @@ import { Alert, Button, Typography, useTheme } from '@mui/material';
 import React, { useMemo, useState } from 'react';
 import { FormContainer } from '../../components/form-container/FormContainer.tsx';
 import { FormSection } from '../../components/form-section/FormSection.tsx';
-import { DeviceSelector } from '../../components/device-selector/DeviceSelector.tsx';
+import { ProductSelector } from '../../components/device-selector/ProductSelector.tsx';
 import { FormResult } from '../../application/models/FormResult.ts';
 import { AppForm, FormTextField } from '../../components/commons/form';
 import { FileUploader } from '../../components/file-uploader/FileUploader.tsx';
@@ -10,13 +10,15 @@ import { RadioGroupField } from '../../components/commons/form/radio-group/Radio
 import { DeliveryType } from '../../application/models/DeliveryType.ts';
 import { DonateOrderFormValidator } from '../../application/validators/DonateOrderFormValidator.ts';
 import { createDonateOrder } from '../../application/use-cases/createDonateOrder.ts';
+import { DeliverySelector } from '../../components/delivery-selector/DeliverySelector.tsx';
+import { ProductType } from '../../application/models/ProductType.ts';
 
 type DonateFormProps = {
     setFormResult?: (formResult: FormResult) => void;
 }
 
 const phoneMaskConfig = { mask: '+38 999 999 99 99', maskChar: '*' };
-const fileInfoText = 'Нам необхідне підтвердження донату. Це може бути скріншот квитанції';
+const fileInfoText = 'Нам необхідне підтвердження донату. Це може бути скріншот квитанції.';
 
 export const DonateForm: React.FC<DonateFormProps> = ({ setFormResult }) => {
     const theme = useTheme();
@@ -29,10 +31,10 @@ export const DonateForm: React.FC<DonateFormProps> = ({ setFormResult }) => {
 
     return (
         <FormContainer isLoading={loading}>
-            <Typography variant="h5" sx={{
+            <Typography variant="h4" sx={{
                 marginTop: theme.spacing(4),
             }}>
-                Форма замовлення за донат
+                Форма за донат
             </Typography>
 
             <Alert sx={{
@@ -45,11 +47,12 @@ export const DonateForm: React.FC<DonateFormProps> = ({ setFormResult }) => {
                 submit={createOrderHandler}
                 formValidator={new DonateOrderFormValidator()}
                 defaultValues={{
-                    deliveryType: DeliveryType.NOVA_POSHTA
+                    deliveryType: DeliveryType.NOVA_POSHTA,
+                    productCode: ProductType.POWERBANK
                 }}
             >
                 <FormSection position={1} label="Виберіть пристрій">
-                    <DeviceSelector/>
+                    <ProductSelector/>
                 </FormSection>
 
                 <FormSection position={2} label="Заповніть дані">
@@ -113,21 +116,7 @@ export const DonateForm: React.FC<DonateFormProps> = ({ setFormResult }) => {
                 </FormSection>
 
                 <FormSection position={4} label="Виберіть спосіб доставки">
-                    <RadioGroupField
-                        name={'deliveryType'}
-                        sx={{ marginTop: theme.spacing(2) }}
-                        items={[
-                            {
-                                label: 'Нова пошта',
-                                value: DeliveryType.NOVA_POSHTA,
-                            },
-                            {
-                                label: 'Самовивіз',
-                                value: DeliveryType.SELF_DELIVERY,
-                            }
-                        ]}/>
-                    {/*<RegionSearchField/>*/}
-                    {/*<PostOfficeSearchField/>*/}
+                    <DeliverySelector/>
                 </FormSection>
 
                 <Button type="submit"

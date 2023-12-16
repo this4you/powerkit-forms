@@ -1,17 +1,25 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.tsx'
+import OrderFormApp from './OrderFormApp.tsx'
 import { ProductType } from './application/models/ProductType.ts';
-import { FormType } from './application/models/FormType.ts';
+import DonateOrderFormApp from './DonateOrderFormApp.tsx';
 
-renderForm('powerbank-form', FormType.ORDER_FORM, ProductType.POWERBANK);
-renderForm('flashlight-form', FormType.ORDER_FORM, ProductType.FLASHLIGHT);
-renderForm('donate-form', FormType.DONATE_FORM);
+renderOrderForm('powerbank-form', ProductType.POWERBANK);
+renderOrderForm('flashlight-form', ProductType.FLASHLIGHT);
+renderDonateOrderForm('donate-form');
 
-function renderForm(formRootId: string, formType: FormType, productType?: ProductType) {
+function renderOrderForm(formRootId: string, productType: ProductType) {
     const rootEl = document.getElementById(formRootId);
 
     if (rootEl) {
-        ReactDOM.createRoot(rootEl).render(<App productType={productType} formType={formType}/>);
+        ReactDOM.createRoot(rootEl).render(<OrderFormApp productType={productType}/>);
+    }
+}
+
+function renderDonateOrderForm(formRootId: string) {
+    const rootEl = document.getElementById(formRootId);
+
+    if (rootEl) {
+        ReactDOM.createRoot(rootEl).render(<DonateOrderFormApp/>);
     }
 }
