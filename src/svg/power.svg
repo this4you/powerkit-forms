@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <path id="path-0" d="M 238.346 249.165 C 262.092 258.425 271.257 266.482 282.255 272.396 C 294.229 282.031 301.715 292.192 306.339 302.171 C 313.826 314.565 320.482 320.42 329.304 326.86 C 339.261 332.869 347.551 336.658 355.362 340.405 C 360.838 344.229 363.421 347.131 366.086 351.188 C 371.055 356.882 374.21 361.338 377.205 365.904 L 377.686 366.717 C 378.165 367.766 378.86 368.844 379.609 369.723" style="fill: none;"/>
+  </defs>
+  <rect x="298.284" y="250.238" width="71.369" height="326.311" style="stroke: rgb(0, 0, 0); paint-order: fill; fill-rule: nonzero; fill: none; stroke-width: 4px; transform-box: fill-box; transform-origin: 50% 50%;" transform="matrix(0.99992, -0.012679, 0.012679, 0.99992, -76.831859, -128.549665)" rx="8.86" ry="8.86"/>
+  <rect x="298.284" y="30.043" width="71.369" height="39.176" style="stroke: rgb(0, 0, 0); paint-order: fill; fill-rule: nonzero; fill: none; stroke-width: 4px; transform-box: fill-box; transform-origin: 50% 50%;" transform="matrix(0.999951, -0.0099, 0.0099, 0.999951, -79.517585, 46.988763)" rx="6.572" ry="6.572"/>
+  <rect x="33.125" y="11.33" width="7.926" height="14.775" style="stroke: rgb(0, 0, 0); paint-order: fill; fill-rule: nonzero; fill: none; stroke-width: 4px; transform-origin: 37.088px 18.718px;" transform="matrix(0.999951, -0.0099, 0.0099, 0.999951, 238.480898, 50.786041)" rx="0.609" ry="0.609"/>
+  <rect x="71.481" y="6.176" width="17.104" height="8.054" style="stroke: rgb(0, 0, 0); paint-order: fill; fill-rule: nonzero; fill: none; stroke-width: 4px; transform-origin: 80.033px 10.204px;" transform="matrix(0.999951, -0.0099, 0.0099, 0.999951, 155.208716, 94.780812)" rx="0.609" ry="0.609"/>
+  <rect x="13.11" y="3.125" width="3.137" height="4.075" style="stroke: rgb(0, 0, 0); paint-order: fill; fill-rule: nonzero; fill: none; stroke-width: 4px; transform-origin: 14.679px 5.163px;" transform="matrix(0.999951, -0.0099, 0.0099, 0.999951, 258.97468, 98.288187)" rx="0.609" ry="0.609"/>
+  <rect x="13.11" y="3.125" width="3.137" height="4.075" style="stroke: rgb(0, 0, 0); paint-order: fill; fill-rule: nonzero; fill: none; stroke-width: 4px; transform-origin: 14.679px 5.163px;" transform="matrix(0.999951, -0.0099, 0.0099, 0.999951, 268.400645, 98.114038)" rx="0.609" ry="0.609"/>
+  <rect x="13.11" y="3.125" width="3.137" height="4.075" style="stroke: rgb(0, 0, 0); paint-order: fill; fill-rule: nonzero; fill: none; stroke-width: 4px; transform-origin: 14.679px 5.163px;" transform="matrix(0.999951, -0.0099, 0.0099, 0.999951, 249.590708, 98.44407)" rx="0.609" ry="0.609"/>
+  <ellipse style="stroke: rgb(0, 0, 0); stroke-width: 2px; fill: rgb(244, 127, 127);" cx="255.441" cy="137.759" rx="7.668" ry="7.668"/>
+  <ellipse style="stroke: rgb(0, 0, 0); stroke-width: 2px; fill: rgb(244, 127, 127);" cx="255.827" cy="158.578" rx="7.668" ry="7.668"/>
+  <ellipse style="stroke: rgb(0, 0, 0); stroke-width: 2px; fill: rgb(244, 127, 127);" cx="255.927" cy="178.785" rx="7.668" ry="7.668"/>
+</svg>
