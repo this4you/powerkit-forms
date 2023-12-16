@@ -4,6 +4,8 @@ import React from 'react';
 import { Controller, useFormContext } from 'react-hook-form';
 import { ProductType } from '../../application/models/ProductType.ts';
 
+import Light from '../../svg/light.svg';
+import Power from '../../svg/power.svg';
 export const ProductSelector = () => {
     const fieldName = 'productCode';
 
@@ -24,7 +26,7 @@ export const ProductSelector = () => {
                     marginTop: theme.spacing(3),
                 }}>
                     <DeviceSelectorItem
-                        icon={'/power.svg'}
+                        icon={Power}
                         label="Повербанк"
                         isSelected={field.value == ProductType.POWERBANK}
                         onClick={() => {
@@ -32,7 +34,7 @@ export const ProductSelector = () => {
                         }}
                     />
                     <DeviceSelectorItem
-                        icon={'/light.svg'}
+                        icon={Light}
                         label="Ліхтарик"
                         isSelected={field.value == ProductType.FLASHLIGHT}
                         onClick={() => {
@@ -49,7 +51,7 @@ type DeviceSelectorItemProps = {
     label: string;
     isSelected?: boolean;
     onClick: React.MouseEventHandler<HTMLDivElement>;
-    icon: string;
+    icon: any;
 };
 export const DeviceSelectorItem: React.FC<DeviceSelectorItemProps> = ({ label, icon, onClick, isSelected = false }) => {
     return (

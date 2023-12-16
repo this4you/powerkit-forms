@@ -7,10 +7,7 @@ export default defineConfig({
     rollupOptions: {
       output: {
         dir: 'dist',
-        entryFileNames: 'powerkitForms.js',
-        assetFileNames: 'powerkitForms.css',
-        chunkFileNames: "powerkitFormsChunk.js",
-        manualChunks: undefined,
+        entryFileNames: 'powerkitForms.js'
       }
     }
   },
