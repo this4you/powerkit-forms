@@ -33,7 +33,7 @@ export const DonateForm: React.FC<DonateFormProps> = ({ setFormResult }) => {
             <Typography variant="h4" sx={{
                 marginTop: theme.spacing(4),
             }}>
-                Форма за донат
+                Замовлення за донат
             </Typography>
 
             <Alert sx={{
