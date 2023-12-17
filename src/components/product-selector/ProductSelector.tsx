@@ -64,7 +64,9 @@ export const DeviceSelectorItem: React.FC<DeviceSelectorItemProps> = ({ label, i
                 cursor: 'pointer',
             }}>
             <Box sx={{
-                transition: 'all 0.5s',
+                boxShadow: isSelected ? 3 : 0,
+                backgroundColor: `${isSelected ? '#eef9ff' : 'inherit'}`,
+                transition: 'all 0.5s linear',
                 userSelect: 'none',
                 width: '100%',
                 height: '100px',
@@ -74,7 +76,6 @@ export const DeviceSelectorItem: React.FC<DeviceSelectorItemProps> = ({ label, i
                 <img src={icon} alt="Powerbank" style={{ height: '100%', width: '100%' }}/>
             </Box>
             <Typography variant={'subtitle1'} sx={{
-                transition: 'all 0.5s',
                 fontWeight: `${isSelected ? 600 : 400}`,
             }}>
                 {label}

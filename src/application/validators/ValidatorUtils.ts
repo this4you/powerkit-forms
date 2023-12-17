@@ -24,4 +24,15 @@ export class ValidatorFieldUtils {
             return `Максимальна кількість ${max}`
         }
     }
+
+
+    static rangeAmount(value: number, min: number, max: number) {
+        if (value > max ) {
+            return `Максимальна кількість ${max}`
+        }
+
+        if (value < min ) {
+            return `Мінімальна кількість ${min}`
+        }
+    }
 }

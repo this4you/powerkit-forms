@@ -6,7 +6,6 @@ import { ProductSelector } from '../../components/product-selector/ProductSelect
 import { FormResult } from '../../application/models/FormResult.ts';
 import { AppForm, FormTextField } from '../../components/commons/form';
 import { FileUploader } from '../../components/file-uploader/FileUploader.tsx';
-import { RadioGroupField } from '../../components/commons/form/radio-group/RadioGroupField.tsx';
 import { DeliveryType } from '../../application/models/DeliveryType.ts';
 import { DonateOrderFormValidator } from '../../application/validators/DonateOrderFormValidator.ts';
 import { createDonateOrder } from '../../application/use-cases/createDonateOrder.ts';
@@ -40,13 +39,14 @@ export const DonateForm: React.FC<DonateFormProps> = ({ setFormResult }) => {
             <Alert sx={{
                 marginTop: theme.spacing(4),
             }} severity="info">
-                Якщо ви волонтер, то вкажіть буль ласка ваші дані в полі додаткова інфррмація
+                Якщо ви волонтер, то вкажіть ваші дані в полі Додаткова інформація.
             </Alert>
 
             <AppForm
                 submit={createOrderHandler}
                 formValidator={new DonateOrderFormValidator()}
                 defaultValues={{
+                    amount: 1,
                     deliveryType: DeliveryType.NOVA_POSHTA,
                     productCode: ProductType.POWERBANK
                 }}
@@ -85,7 +85,7 @@ export const DonateForm: React.FC<DonateFormProps> = ({ setFormResult }) => {
                         type="number"
                         id="amount"
                         name="amount"
-                        label="Кількість повербанків"
+                        label="Кількість"
                         variant="standard"
                     />
                     <FormTextField
