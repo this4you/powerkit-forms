@@ -1,6 +1,4 @@
 import axios from 'axios';
-import { GetRegionsResponse } from './models/GetRegionsResponse.ts';
-import { Region } from '../models/Region.ts';
 import { CreateOrder } from '../models/CreateOrder.ts';
 import { CreateOrderResponse } from './models/CreateOrderResponse.ts';
 import { CreateOrderRequest } from './models/CreateOrderRequest.ts';
