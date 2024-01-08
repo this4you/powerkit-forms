@@ -1,8 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import OrderFormApp from './OrderFormApp.tsx'
-import { ProductType } from './application/models/ProductType.ts';
-import DonateOrderFormApp from './DonateOrderFormApp.tsx';
+import OrderFormApp from './order-forms/OrderFormApp.tsx'
+import { ProductType } from './order-forms/application/models/ProductType.ts';
+import DonateOrderFormApp from './order-forms/DonateOrderFormApp.tsx';
 
 renderOrderForm('powerbank-form', ProductType.POWERBANK);
 renderOrderForm('flashlight-form', ProductType.FLASHLIGHT);

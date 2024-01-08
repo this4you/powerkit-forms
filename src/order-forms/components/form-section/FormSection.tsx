@@ -1,6 +1,6 @@
 import React, { PropsWithChildren } from 'react';
 import { Box, Typography, useTheme } from '@mui/material';
-import { flexStyles } from '../../utils/flexStyles.ts';
+import { flexStyles } from '../../../utils/flexStyles.ts';
 
 type FormSectionProps = {
     position: number;
