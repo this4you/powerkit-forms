@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { CreateOrderResponse } from './models/CreateOrderResponse.ts';
 import { CreateOrderRequest } from './models/CreateOrderRequest.ts';
-import { BASE_URL } from './axios.ts';
+import { BASE_URL } from '../../../commons/axios.ts';
 import { CreateDonateOrder } from '../models/CreateDonateOrder.ts';
 
 const URL = `${BASE_URL}CreateDonate`;

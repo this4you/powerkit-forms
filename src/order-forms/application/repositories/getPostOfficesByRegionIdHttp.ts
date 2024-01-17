@@ -1,5 +1,5 @@
 import { GetRegionsResponse } from './models/GetRegionsResponse.ts';
-import { appAxios, BASE_URL } from './axios.ts';
+import { appAxios, BASE_URL } from '../../../commons/axios.ts';
 import { PostOffice } from '../models/PostOffice.ts';
 
 const URL = `${BASE_URL}GetPostOfficesByRegionId`;

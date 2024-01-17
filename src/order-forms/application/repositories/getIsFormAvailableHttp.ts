@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { BASE_URL } from './axios.ts';
+import { BASE_URL } from '../../../commons/axios.ts';
 import { GetIsFormAvailableResponse } from './models/GetIsFormAvailableResponse.ts';
 import { IsFormAvailable } from '../models/IsFormAvailable.ts';
 

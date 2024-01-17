@@ -2,7 +2,7 @@ import axios from 'axios';
 import { CreateOrder } from '../models/CreateOrder.ts';
 import { CreateOrderResponse } from './models/CreateOrderResponse.ts';
 import { CreateOrderRequest } from './models/CreateOrderRequest.ts';
-import { BASE_URL } from './axios.ts';
+import { BASE_URL } from '../../../commons/axios.ts';
 
 const URL = `${BASE_URL}CreateOrder`;
 export const createOrderHttp = async (createOrder: CreateOrder): Promise<CreateOrderResponse> => {

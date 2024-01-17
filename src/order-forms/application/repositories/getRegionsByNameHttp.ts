@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { GetRegionsResponse } from './models/GetRegionsResponse.ts';
 import { Region } from '../models/Region.ts';
-import { BASE_URL } from './axios.ts';
+import { BASE_URL } from '../../../commons/axios.ts';
 
 const URL = `${BASE_URL}GetRegionByName`;
 export const getRegionsByNameHttp = async (name: string): Promise<Region[]> => {
