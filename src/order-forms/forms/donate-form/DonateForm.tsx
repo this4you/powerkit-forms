@@ -1,4 +1,4 @@
-import { Alert, Button, Typography, useTheme } from '@mui/material';
+import { Alert, Button, Link, Typography, useTheme } from '@mui/material';
 import React, { useMemo, useState } from 'react';
 import { FormContainer } from '../../components/form-container/FormContainer.tsx';
 import { FormSection } from '../../components/form-section/FormSection.tsx';
@@ -11,11 +11,13 @@ import { DonateOrderFormValidator } from '../../application/validators/DonateOrd
 import { createDonateOrder } from '../../application/use-cases/createDonateOrder.ts';
 import { DeliverySelector } from '../../components/delivery-selector/DeliverySelector.tsx';
 import { ProductType } from '../../application/models/ProductType.ts';
+import { Link as URL } from '@mui/icons-material';
 
 type DonateFormProps = {
     setFormResult?: (formResult: FormResult) => void;
 }
 
+const donateURL = 'https://send.monobank.ua/jar/9XUQiiaqJi';
 const phoneMaskConfig = { mask: '+38 999 999 99 99', maskChar: '*' };
 const fileInfoText = 'Нам необхідне підтвердження донату. Це може бути скріншот квитанції.';
 
@@ -111,7 +113,21 @@ export const DonateForm: React.FC<DonateFormProps> = ({ setFormResult }) => {
                     />
                 </FormSection>
 
-                <FormSection position={3} label="Завантажте фото">
+                <FormSection position={3} label="Зробіть донат">
+                    <Link
+                        sx={{
+                            display: 'flex',
+                            marginTop: '10px',
+                            marginBottom: '-15px',
+                            width: '65%',
+                            justifyContent: 'space-between'
+                        }}
+                        target={'_blank'}
+                        href={donateURL}>
+                        <URL/>
+                        Посилання на банку
+                        <URL/>
+                    </Link>
                     <FileUploader fileInfoText={fileInfoText}/>
                 </FormSection>
 
