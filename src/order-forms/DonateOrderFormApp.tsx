@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, createTheme, CssBaseline, responsiveFontSizes, ThemeProvider } from '@mui/material';
+import { Box, createTheme, responsiveFontSizes, ScopedCssBaseline, ThemeProvider } from '@mui/material';
 import { FormWrapper } from './forms/form-wrapper/FormWrapper.tsx';
 import { DonateForm } from './forms/donate-form/DonateForm.tsx';
 
@@ -8,8 +8,9 @@ const theme = responsiveFontSizes(createTheme());
 function DonateOrderFormApp() {
     return (
         <>
-            <CssBaseline/>
+            {/*<CssBaseline/>*/}
             <ThemeProvider theme={theme}>
+                <ScopedCssBaseline>
                 <Box sx={{
                     minHeight: '100vh',
                     width: '100vw',
@@ -22,6 +23,7 @@ function DonateOrderFormApp() {
                         <DonateForm/>
                     </FormWrapper>
                 </Box>
+                </ScopedCssBaseline>
             </ThemeProvider>
         </>
     )
