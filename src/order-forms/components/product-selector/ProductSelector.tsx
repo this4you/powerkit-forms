@@ -12,6 +12,9 @@ export const ProductSelector = () => {
     const theme = useTheme();
     const { control } = useFormContext();
 
+    console.log('Light', Light);
+    console.log('Power', Power);
+
     return (
         <Controller
             rules={{ required: true }}
@@ -26,7 +29,7 @@ export const ProductSelector = () => {
                     marginTop: theme.spacing(3),
                 }}>
                     <DeviceSelectorItem
-                        icon={Power}
+                        icon={'https://this4you.github.io/powerkit-forms/assets/power-9fe62730.svg'}
                         label="Повербанк"
                         isSelected={field.value == ProductType.POWERBANK}
                         onClick={() => {
@@ -34,7 +37,7 @@ export const ProductSelector = () => {
                         }}
                     />
                     <DeviceSelectorItem
-                        icon={Light}
+                        icon={'https://this4you.github.io/powerkit-forms/assets/light-074ba229.svg'}
                         label="Ліхтарик"
                         isSelected={field.value == ProductType.FLASHLIGHT}
                         onClick={() => {
