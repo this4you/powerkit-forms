@@ -22,8 +22,10 @@ export const createDonateOrderHttp = async (createOrder: CreateDonateOrder): Pro
                 ApproveDocument: createOrder.file.approveDocument,
                 Name: createOrder.file.name
             },
-            ProductCode: createOrder.productCode
-        }
+            ProductCode: createOrder.productCode,
+            IsSelfDelivery: createOrder.isSelfDelivery,
+            Email: ''
+        } as CreateOrderRequest
     );
 
     //@ts-ignore

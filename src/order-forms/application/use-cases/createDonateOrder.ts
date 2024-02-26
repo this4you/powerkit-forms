@@ -39,7 +39,8 @@ const mapFormValues = async (createDonateOrderFormValues: CreateDonateOrderFormV
     additionalInfo: mapAdditionalInfo(
         createDonateOrderFormValues.deliveryType,
         createDonateOrderFormValues.additionalInfo
-    )
+    ),
+    isSelfDelivery: createDonateOrderFormValues.deliveryType === DeliveryType.SELF_DELIVERY
 });
 
 

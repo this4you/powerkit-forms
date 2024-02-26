@@ -8,4 +8,5 @@ export type CreateOrderRequest = {
     Region: string;
     PostOffice: string;
     AdditionalInfo: string;
+    IsSelfDelivery: boolean;
 };

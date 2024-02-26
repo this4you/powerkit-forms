@@ -10,6 +10,7 @@ export type CreateDonateOrder = {
     postOffice?: string;
     additionalInfo?: string;
     file?: ApproveDocument;
+    isSelfDelivery: boolean;
 };
 
 export type ApproveDocument = {
