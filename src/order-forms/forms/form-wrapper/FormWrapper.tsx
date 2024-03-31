@@ -10,6 +10,13 @@ type FormWrapperProps = {
     productType?: ProductType
 } & PropsWithChildren;
 
+function scrollUp() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+}
+
 export const FormWrapper: React.FC<FormWrapperProps> = ({ children, productType }) => {
     const [formResult, setFormResult] = useState<FormResult | null>(null);
     const [loading, setLoading] = useState(true);
@@ -38,6 +45,12 @@ export const FormWrapper: React.FC<FormWrapperProps> = ({ children, productType 
         }
 
     }, [productType, setLoading, setFormResult]);
+
+    useEffect(() => {
+        if (formResult !== null) {
+            scrollUp();
+        }
+    }, [formResult]);
 
     if (loading) {
         return (
