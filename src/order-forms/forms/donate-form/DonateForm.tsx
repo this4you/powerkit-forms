@@ -34,9 +34,8 @@ export const DonateForm: React.FC<DonateFormProps> = ({ setFormResult }) => {
     const [loading, setLoading] = useState(false);
     const createDonateOrderHandler = useMemo(() => createDonateOrder(setFormResult, setLoading), [setFormResult]);
     const createOrderHandler = useCallback((createDonateOrderFormValues: CreateDonateOrderFormValues) => {
-        createDonateOrderHandler(createDonateOrderFormValues).then(() => {
-            scrollUp();
-        });
+        scrollUp();
+        createDonateOrderHandler(createDonateOrderFormValues);
     }, [createDonateOrderHandler])
 
     const inputStyle = {
