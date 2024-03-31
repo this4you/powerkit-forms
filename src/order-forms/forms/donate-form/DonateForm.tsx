@@ -1,5 +1,5 @@
 import { Alert, Button, Link, Typography, useTheme } from '@mui/material';
-import React, { useCallback, useMemo, useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import { FormContainer } from '../../components/form-container/FormContainer.tsx';
 import { FormSection } from '../../components/form-section/FormSection.tsx';
 import { ProductSelector } from '../../components/product-selector/ProductSelector.tsx';
@@ -12,7 +12,6 @@ import { createDonateOrder } from '../../application/use-cases/createDonateOrder
 import { DeliverySelector } from '../../components/delivery-selector/DeliverySelector.tsx';
 import { ProductType } from '../../application/models/ProductType.ts';
 import { Link as URL } from '@mui/icons-material';
-import { CreateDonateOrderFormValues } from '../../application/models/CreateDonateOrderFormValues.ts';
 
 type DonateFormProps = {
     setFormResult?: (formResult: FormResult) => void;
@@ -22,23 +21,10 @@ const donateURL = 'https://send.monobank.ua/jar/9XUQiiaqJi';
 const phoneMaskConfig = { mask: '+38 999 999 99 99', maskChar: '*' };
 const fileInfoText = 'Нам необхідне підтвердження донату. Це може бути скріншот квитанції.';
 
-function scrollUp() {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
-}
-
 export const DonateForm: React.FC<DonateFormProps> = ({ setFormResult }) => {
     const theme = useTheme();
     const [loading, setLoading] = useState(false);
-    const createDonateOrderHandler = useMemo(() => createDonateOrder(setFormResult, setLoading), [setFormResult]);
-    const createOrderHandler = useCallback((createDonateOrderFormValues: CreateDonateOrderFormValues) => {
-        createDonateOrderHandler(createDonateOrderFormValues).then(() => {
-            scrollUp();
-        });
-    }, [createDonateOrderHandler])
-
+    const createOrderHandler = useMemo(() => createDonateOrder(setFormResult, setLoading), [setFormResult]);
     const inputStyle = {
         width: '80%',
         marginTop: theme.spacing(1)
