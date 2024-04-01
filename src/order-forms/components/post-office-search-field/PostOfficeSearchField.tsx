@@ -42,6 +42,9 @@ export const PostOfficeSearchField: React.FC = () => {
                 } else {
                     setOptions(postOffices.filter(it => it.name.includes(searchValue)));
                 }
+            } else if (searchValue.length === 0) {
+                setLoading(false);
+                setOptions(postOffices);
             }
         }, 500), []);
 

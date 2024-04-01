@@ -15,7 +15,7 @@ export const getPostOfficesByRegionIdHttp = async (regionId: string): Promise<Po
     return sortAddresses(response.data.GetPostOfficesByRegionIdResult?.map(it => ({
         id: it.Id,
         name: reformatAddress(it.Name),
-    })) || []);
+    })) || []).filter(it => !it.name.includes("Поштомат"));
 }
 
 
