@@ -29,8 +29,9 @@ export const CreateReceptionPointForm: React.FC<CreateReceptionPointFormProps> =
             <Typography variant="h5" sx={{
                 textAlign: 'center',
                 margin: theme.spacing(4),
+                marginBottom: theme.spacing(1),
             }}>
-                Додати точку збору використаних електронних цигарок для PowerKit
+                Додати точку збору використаних електронних цигарок
             </Typography>
 
             <AppForm
