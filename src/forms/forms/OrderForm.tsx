@@ -1,14 +1,14 @@
-import { FormContainer } from '../../components/form-container/FormContainer.tsx';
+import { FormContainer } from '../components/form-container/FormContainer.tsx';
 import { Alert, Button, Typography, useTheme } from '@mui/material';
 import React, { useMemo, useState } from 'react';
-import { createOrder } from '../../application/use-cases/createOrder.ts';
-import { FormResult } from '../../application/models/FormResult.ts';
-import { AppForm, FormTextField } from '../../components/commons/form';
-import { RegionSearchField } from '../../components/region-search-field/RegionSearchField.tsx';
-import { PostOfficeSearchField } from '../../components/post-office-search-field/PostOfficeSearchField.tsx';
-import { FileUploader } from '../../components/file-uploader/FileUploader.tsx';
-import { OrderFormValidator } from '../../application/validators/OrderFormValidator.ts';
-import { ProductType } from '../../application/models/ProductType.ts';
+import { createOrder } from '../application/use-cases/createOrder.ts';
+import { FormResult } from '../application/models/FormResult.ts';
+import { AppForm, FormTextField } from '../components/commons/form';
+import { RegionSearchField } from '../components/region-search-field/RegionSearchField.tsx';
+import { PostOfficeSearchField } from '../components/post-office-search-field/PostOfficeSearchField.tsx';
+import { FileUploader } from '../components/file-uploader/FileUploader.tsx';
+import { OrderFormValidator } from '../application/validators/OrderFormValidator.ts';
+import { ProductType } from '../application/models/ProductType.ts';
 
 type OrderFormProps = {
     productType: ProductType,

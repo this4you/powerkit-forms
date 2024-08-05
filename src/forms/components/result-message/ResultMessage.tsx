@@ -37,7 +37,7 @@ export const ResultMessage: React.FC<ResultMessageProps> = ({ message, code }) =
                     <Box sx={{
                         display: 'flex',
                         alignItems: 'center',
-                        justifyContent: 'space-around',
+                        justifyContent: 'space-evenly',
                         width: '320px'
                     }}>
                         {formResultConfig.icon}
@@ -68,7 +68,7 @@ function getResultConfig(code: string): FormResultConfig {
         case '0':
             return {
                 color: '#FF6347',
-                title: 'Замовлення відхилено',
+                title: 'Відхилено',
                 icon: <ErrorIcon sx={{
                     fontSize: '60px',
                 }}/>
@@ -76,7 +76,7 @@ function getResultConfig(code: string): FormResultConfig {
         case '1':
             return {
                 color: '#29AB87',
-                title: 'Замовлення прийнято!',
+                title: 'Прийнято!',
                 icon: <CheckIcon sx={{
                     fontSize: '60px',
                 }}/>

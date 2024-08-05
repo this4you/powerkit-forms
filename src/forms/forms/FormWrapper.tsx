@@ -1,9 +1,9 @@
 import React, { PropsWithChildren, useEffect, useState } from 'react';
-import { FormResult } from '../../application/models/FormResult.ts';
-import { getIsAvailable } from '../../application/use-cases/getIsAvailable.ts';
-import { ResultMessage } from '../../components/result-message/ResultMessage.tsx';
+import { FormResult } from '../application/models/FormResult.ts';
+import { getIsAvailable } from '../application/use-cases/getIsAvailable.ts';
+import { ResultMessage } from '../components/result-message/ResultMessage.tsx';
 import { Typography } from '@mui/material';
-import { ProductType } from '../../application/models/ProductType.ts';
+import { ProductType } from '../application/models/ProductType.ts';
 
 
 type FormWrapperProps = {

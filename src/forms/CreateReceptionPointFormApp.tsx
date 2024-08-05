@@ -1,14 +1,13 @@
 import React from 'react';
 import { Box, createTheme, responsiveFontSizes, ScopedCssBaseline, ThemeProvider } from '@mui/material';
-import { FormWrapper } from './forms/form-wrapper/FormWrapper.tsx';
-import { DonateForm } from './forms/donate-form/DonateForm.tsx';
+import { FormWrapper } from './forms/FormWrapper.tsx';
+import { CreateReceptionPointForm } from './forms/CreateReceptionPointForm.tsx';
 
 const theme = responsiveFontSizes(createTheme());
 
-function DonateOrderFormApp() {
+function CreateReceptionPointFormApp() {
     return (
         <>
-            {/*<CssBaseline/>*/}
             <ThemeProvider theme={theme}>
                 <ScopedCssBaseline>
                 <Box sx={{
@@ -20,7 +19,7 @@ function DonateOrderFormApp() {
                     backgroundColor: 'black',
                 }}>
                     <FormWrapper>
-                        <DonateForm/>
+                        <CreateReceptionPointForm/>
                     </FormWrapper>
                 </Box>
                 </ScopedCssBaseline>
@@ -29,4 +28,4 @@ function DonateOrderFormApp() {
     )
 }
 
-export default DonateOrderFormApp
+export default CreateReceptionPointFormApp
