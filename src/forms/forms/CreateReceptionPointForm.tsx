@@ -30,7 +30,7 @@ export const CreateReceptionPointForm: React.FC<CreateReceptionPointFormProps> =
                 textAlign: 'center',
                 margin: theme.spacing(4),
             }}>
-                Додати точку збору використанних електроних цигарок для PowerKit
+                Додати точку збору використаних електронних цигарок для PowerKit
             </Typography>
 
             <AppForm
