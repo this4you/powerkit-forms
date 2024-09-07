@@ -18,10 +18,10 @@ export const createDonateOrderHttp = async (createOrder: CreateDonateOrder): Pro
             PostOffice: createOrder.postOffice,
             AdditionalInfo: createOrder.additionalInfo,
             Amount: createOrder.amount,
-            File: {
-                ApproveDocument: createOrder.file.approveDocument,
-                Name: createOrder.file.name
-            },
+            File: createOrder.file ? {
+                ApproveDocument: createOrder.file?.approveDocument,
+                Name: createOrder.file?.name
+            } : null,
             ProductCode: createOrder.productCode,
             IsSelfDelivery: createOrder.isSelfDelivery,
             Email: ''
