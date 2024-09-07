@@ -17,11 +17,15 @@ export class DonateOrderFormValidator implements FormValidator<CreateDonateOrder
             amount: ValidatorFieldUtils.rangeAmount(data.amount, 1, MAX_POWER_AMOUNT),
             region: data.deliveryType == DeliveryType.NOVA_POSHTA ? ValidatorFieldUtils.required(data.region) : '',
             postOffice: data.deliveryType == DeliveryType.NOVA_POSHTA ? ValidatorFieldUtils.required(data.postOffice) : '',
-            approveDocument: this.validateApproveDocument(data.approveDocument),
+            approveDocument: this.validateApproveDocument(data.approveDocument, data.additionalInfo),
         };
     }
 
-    private validateApproveDocument(fileList: FileList | null) {
+    private validateApproveDocument(fileList: FileList | null, additionalInfo: string | null) {
+        if (additionalInfo === "Заміна") {
+            return undefined;
+        }
+
         if (!fileList || fileList.length == 0) {
             return 'Фото підтвердження є обовʼязковим!';
         }
